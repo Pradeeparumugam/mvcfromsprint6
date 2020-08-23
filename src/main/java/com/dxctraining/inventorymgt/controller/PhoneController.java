@@ -1,4 +1,4 @@
-/*package com.dxctraining.inventorymgt.controller;
+package com.dxctraining.inventorymgt.controller;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -22,37 +22,37 @@ public class PhoneController {
 		public void init() {
 
 			
-			Phone i1 = new Phone("Phonename1", s1);
-			Phone i2 = new Phone("Phonename2", s2);
+			Phone i1 = new Phone("Phonename1", 128);
+			Phone i2 = new Phone("Phonename2", 256);
 				phoneservice.addPhone(i1);
 				phoneservice.addPhone(i2);
 
-				int id1 = i1.getId();
-				Phone phone = phoneservice.findPhoneById(id1);
-				
-				System.out.println("Phone Details =" + phone.getId() + " " + phone.getName());
-				int id2 = i2.getId();
-				Phone phone2 = phoneservice.findPhoneById(id2);
-				System.out.println("Phone Details =" + phone2.getId() + " " + phone2.getName());
-
-				System.out.println("Phone completed");
+//				int id1 = i1.getId();
+//				Phone phone = phoneservice.findPhoneById(id1);
+//				
+//				System.out.println("Phone Details =" + phone.getId() + " " + phone.getName());
+//				int id2 = i2.getId();
+//				Phone phone2 = phoneservice.findPhoneById(id2);
+//				System.out.println("Phone Details =" + phone2.getId() + " " + phone2.getName());
+//
+			System.out.println("Phone completed");
 		}
 		
 			
-			@GetMapping("/phone") 
+			/*@GetMapping("/phone") 
 			 	public ModelAndView supplierdetails(@RequestParam("id") int id) { 
 				System.out.println("phone details print stmt");
 			 		Phone phone = phoneservice.findPhoneById(id); 
 			 		ModelAndView mv = new ModelAndView("supplierdetails", "supplier", supplier); 
 			 		return mv; 
-			 	} 
+			 	} */
 			 	 
-			 	@GetMapping("/list") 
+			 	@GetMapping("/phonelist") 
 	 		 	public ModelAndView allPhones() { 
 			 		System.out.println("phone list print stmt");
 			 		List<Phone>listAll = phoneservice.displayPhone(); 
-			 		ModelAndView mv = new ModelAndView("supplierlist","suppliers",listAll); 
+			 		ModelAndView mv = new ModelAndView("phonelist","phones",listAll); 
 			 		return mv; 
 			 	}
 	}
-*/
+

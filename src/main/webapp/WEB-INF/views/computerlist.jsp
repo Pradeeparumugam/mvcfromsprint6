@@ -12,7 +12,6 @@
 <c:forEach items="${computers}" var="computer">
 <c:out value="${computer.id}" ></c:out><br>
 <c:out value="${computer.name}"></c:out><br>
-<c:out value="${computer.supplier}"></c:out><br>
 </c:forEach>
 
 </body>

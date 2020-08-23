@@ -40,7 +40,7 @@ public class PhoneDaoImpl implements PhoneDao {
 		em.remove(phone);
 	}
 	public List<Phone> displayPhone() {
-		String jpaql = "from supplier";
+		String jpaql = "from Phone";
 		TypedQuery<Phone> query = em.createQuery(jpaql, Phone.class);
 		List<Phone> phonelist = query.getResultList();
 		return phonelist;

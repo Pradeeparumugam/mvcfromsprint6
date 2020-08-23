@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -51,13 +52,13 @@ public class ComputerController extends Item{
 			}
 			
 				
-				/*@GetMapping("/computer") 
-				 	public ModelAndView supplierdetails(@RequestParam("id") int id) { 
+				@GetMapping("/computer") 
+				 	public ModelAndView computerdetails(@RequestParam("id") int id) { 
 					System.out.println("computer details print stmt");
 				 		Computer computer = computerservice.findComputerById(id); 
-				 		ModelAndView mv = new ModelAndView("supplierdetails", "supplier", supplier); 
+				 		ModelAndView mv = new ModelAndView("computerdetails", "computer", computer); 
 				 		return mv; 
-				 	} */
+				 	} 
 				 	 
 				 	@GetMapping("/computerlist") 
 		 		 	public ModelAndView allComputers() { 

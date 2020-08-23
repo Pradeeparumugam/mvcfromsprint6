@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" 
      pageEncoding="UTF-8"%> 
  
+
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
-<title>computer details</title>
+<title>All phones</title>
 </head>
 <body>
-<h2>computer details</h2>
-Id=<c:out value="${computer.id}"></c:out><br>
-Name=<c:out value="${computer.name}"></c:out><br>
+<c:forEach items="${phones}" var="phone">
+<c:out value="${phone.id}" ></c:out><br>
+<c:out value="${phone.name}"></c:out><br>
+</c:forEach>
 
 </body>
 </html>
