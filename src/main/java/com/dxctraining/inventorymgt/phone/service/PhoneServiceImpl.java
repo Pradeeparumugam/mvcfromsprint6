@@ -1,10 +1,13 @@
 package com.dxctraining.inventorymgt.phone.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.dxctraining.inventorymgt.computer.entities.Computer;
 import com.dxctraining.inventorymgt.phone.dao.*;
 import com.dxctraining.inventorymgt.phone.entities.Phone;
 
@@ -31,6 +34,11 @@ public class PhoneServiceImpl implements PhoneService {
 	public void removePhone(int id) {
 		verify(id);
 		phonedaoimpl.removePhone(id);
+	}
+	
+	public List<Phone> displayPhone() {
+		 List<Phone>phones=phonedaoimpl.displayPhone(); 
+	        return phones; 
 	}
 
 	public void verify(int id) {

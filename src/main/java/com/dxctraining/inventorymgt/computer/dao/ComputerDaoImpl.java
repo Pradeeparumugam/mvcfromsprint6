@@ -31,23 +31,24 @@ public class ComputerDaoImpl implements ComputerDao {
 	
 	@Override
 	public Computer findComputerById(int id) {
-		if (id < 1) {
-			throw new NotValid("not valid");
-		}
+		if (id<1) {
+		throw new NotValid("not valid");
+	}
 		Computer computer = em.find(Computer.class, id);
+		
 		return computer;
 	}
 
 	@Override
 	public void removeComputer(int id) {
-		if (id < 1) {
-			throw new NotValid("not valid");
-		}
-		Computer computer = findComputerById(id);
-		em.remove(computer);
+				Computer computer = findComputerById(id);
+				if (computer==null) {
+					throw new NotValid("not valid");
+				}
+				em.remove(computer);
 	}
 	public List<Computer> displayComputer() {
-		String jpaql = "from supplier";
+		String jpaql = "from Computer";
 		TypedQuery<Computer> query = em.createQuery(jpaql,Computer.class);
 		List<Computer> computerlist = query.getResultList();
 		return computerlist;
