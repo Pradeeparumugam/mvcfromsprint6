@@ -43,7 +43,6 @@ public class SupplierDaoImpl implements ISupplierDao {
 		Supplier supplier = findSupplierById(id);
 		em.remove(supplier);
 	}
-
 	public List<Supplier> displaySuppliers() {
 		String jpaql = "from Supplier";
 		TypedQuery<Supplier> query = em.createQuery(jpaql, Supplier.class);
