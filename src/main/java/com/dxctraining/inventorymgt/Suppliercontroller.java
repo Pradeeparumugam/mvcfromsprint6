@@ -57,6 +57,22 @@ public class Suppliercontroller {
 		 		ModelAndView mv = new ModelAndView("supplierlist","suppliers",listAll); 
 		 		return mv; 
 		 	}
+		 	@GetMapping("/supplierregister") 
+		 	 	public ModelAndView supplierreg() { 
+		 	 		ModelAndView mv = new ModelAndView("supplierregister"); 
+		 	 		return mv; 
+		 	 	} 
+		 	 
+		 	 
+		 	 	@GetMapping("/newsupplierregistering") 
+		 	 	public ModelAndView processRegister( @RequestParam("name") String name) { 
+		 	 		System.out.println("new supplier name, name=" + name); 
+		 	 		Supplier supplier = new Supplier(name); 
+		 	 		supplier = supplierservice.addSupplier(supplier);
+		 	 		ModelAndView mv = new ModelAndView("supplierdetails", "supplier",supplier); 
+		 	 		return mv; 
+		 	 	} 
+
 }
 
 
