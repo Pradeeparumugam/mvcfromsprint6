@@ -1,4 +1,4 @@
-package com.dxctraining.inventorymgt;
+package com.dxctraining.inventorymgt.controller;
 
 import java.util.List;
 
