@@ -67,5 +67,20 @@ public class ComputerController extends Item{
 				 		ModelAndView mv = new ModelAndView("computerlist","computers",listAll); 
 				 		return mv; 
 				 	}
+				 	@GetMapping("/computerregister") 
+			 	 	public ModelAndView computerreg() { 
+			 	 		ModelAndView mv = new ModelAndView("computerregister"); 
+			 	 		return mv; 
+			 	 	} 
+			 	 
+			 	 
+			 	 	@GetMapping("/newcomputerregistering") 
+			 	 	public ModelAndView processRegister( @RequestParam("name") String name,@RequestParam("disksize") int disksize) { 
+			 	 		System.out.println("new supplier name=" + name+ "  DiskSize="+disksize); 
+			 	 		Computer computer = new Computer(name,disksize); 
+			 	 		computer = computerservice.addComputer(computer);
+			 	 		ModelAndView mv = new ModelAndView("computerdetails", "computer",computer); 
+			 	 		return mv; 
+			 	 	} 
 		}
 
