@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dxctraining.inventorymgt.computer.entities.Computer;
 import com.dxctraining.inventorymgt.phone.entities.Phone;
 import com.dxctraining.inventorymgt.phone.service.PhoneService;
 
@@ -39,13 +40,13 @@ public class PhoneController {
 		}
 		
 			
-			/*@GetMapping("/phone") 
+			@GetMapping("/phone") 
 			 	public ModelAndView supplierdetails(@RequestParam("id") int id) { 
 				System.out.println("phone details print stmt");
-			 		Phone phone = phoneservice.findPhoneById(id); 
-			 		ModelAndView mv = new ModelAndView("supplierdetails", "supplier", supplier); 
+			 		Phone phn = phoneservice.findPhoneById(id); 
+			 		ModelAndView mv = new ModelAndView("phonedetails", "phone", phn); 
 			 		return mv; 
-			 	} */
+			 	} 
 			 	 
 			 	@GetMapping("/phonelist") 
 	 		 	public ModelAndView allPhones() { 
@@ -54,5 +55,20 @@ public class PhoneController {
 			 		ModelAndView mv = new ModelAndView("phonelist","phones",listAll); 
 			 		return mv; 
 			 	}
+			 	@GetMapping("/phoneregister") 
+		 	 	public ModelAndView phonereg() { 
+		 	 		ModelAndView mv = new ModelAndView("phoneregister"); 
+		 	 		return mv; 
+		 	 	} 
+		 	 
+		 	 
+		 	 	@GetMapping("/newphoneregistering") 
+		 	 	public ModelAndView processReg( @RequestParam("name") String name,@RequestParam("storagesize") int storagesize) { 
+		 	 		System.out.println("new Phone name=" + name+ "  StorageSize="+storagesize); 
+		 	 		Phone ph = new Phone(name,storagesize); 
+		 	 		ph = phoneservice.addPhone(ph);
+		 	 		ModelAndView mv = new ModelAndView("phonedetails", "phone",ph); 
+		 	 		return mv; 
+		 	 	} 
 	}
 

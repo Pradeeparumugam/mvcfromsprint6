@@ -5,12 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>computer details</title>
+<title>phone details</title>
 </head>
 <body>
-<h2>computer details</h2>
-Id=<c:out value="${computer.id}"></c:out><br>
-Name=<c:out value="${computer.name}"></c:out><br>
-DiskSize=<c:out value="${computer.disksize}"></c:out><br>
+<h2>phone details</h2>
+Id=<c:out value="${phone.id}"></c:out><br>
+Name=<c:out value="${phone.name}"></c:out><br>
+StorageSize=<c:out value="${phone.storagesize}"></c:out><br>
 </body>
 </html>

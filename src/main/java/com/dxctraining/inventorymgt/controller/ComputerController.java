@@ -76,7 +76,7 @@ public class ComputerController extends Item{
 			 	 
 			 	 	@GetMapping("/newcomputerregistering") 
 			 	 	public ModelAndView processRegister( @RequestParam("name") String name,@RequestParam("disksize") int disksize) { 
-			 	 		System.out.println("new supplier name=" + name+ "  DiskSize="+disksize); 
+			 	 		System.out.println("new Computer name=" + name+ "  DiskSize="+disksize); 
 			 	 		Computer computer = new Computer(name,disksize); 
 			 	 		computer = computerservice.addComputer(computer);
 			 	 		ModelAndView mv = new ModelAndView("computerdetails", "computer",computer); 
